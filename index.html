@@ -35,11 +35,10 @@
             <div class="quiz-intro row">
               <div class="quiz-intro__col">
                 <h1 class="quiz-heading">Начало приёма</h1>
-                <p>Здравствуйте. Вы находитесь на странице заполнения анамнеза.</p>
-                <p>Сбор анамнеза - важная часть нейропсихологического тестирования.</p>
-                <p>Мы обязательно познакомимся и поговорим очно, но сейчас необходимо получить первичные данные, чтобы  корректно выстроить исследование и собрать как можно больше сведений о ребенке, получить  более полную картину происходящего с ним.<br></p>
-                <p>Важной может оказаться каждая деталь из истории развития до настоящего момента.</p>
-                <p>Если не удается вспомнить какую-то деталь, напишите, что не помните или сомневаетесь в ответе.</p>
+                <p>Здравствуйте, вам предстоит заполнить квиз.</p>
+                <p>Это займет примерно 20-30 минут.</p>
+                <p>Важной может показаться каждая деталь. Но если что-то не удается вспомнить, укажите, пожалуйста это в комментарии или  оставьте поля пустыми.</p>
+                <p>Спасибо</p>
               </div>
               <div class="quiz-whoiam">
                 <div class="quiz-whoiam__avatar"><img src="../img/mary.png" alt="Мария, нейропсихолог и клинический психолог"></div>
@@ -47,7 +46,7 @@
               </div>
             </div>
             <div class="navigation">
-              <div class="navigation__next"><a href="#">Заполнить анамнез</a></div>
+              <div class="navigation__next"><a href="#">Пройти квиз</a></div>
             </div>
           </div>
           <div class="quiz__item">
@@ -66,29 +65,13 @@
             <h1>Знакомство. Вопросы. Часть 1</h1>
             <div class="row">
               <div class="quiz-grid quiz-grid--withoutannotation">
-                <div>
-                  <label class="childs-code-label" for="childs-code">Код клиента</label>
-                  <input class="childs-code" type="text" name="childs-code" placeholder="Код">
-                </div>
-                <div>
-                  <label class="childs-date-label" for="childs-date">Дата рождения ребенка</label>
-                  <input class="childs-date" type="date" name="childs-date" placeholder="Дата рождения">
-                </div>
-                <div>
-                  <label class="childs-age-label" for="childs-age">Возраст ребёнка</label>
-                  <input class="childs-age" type="number" name="childs-age" placeholder="Возраст">
+                <div class="quiz-grid__elem">
+                  <label class="childs-code-label" for="childs-code">Код</label>
+                  <input class="childs-code" type="number" name="childs-code" placeholder="">
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="quiz-grid quiz-grid--withoutannotation">
-                <div>
-                  <label class="parents-birthdays__label" for="parents-birthdays">Дата рождения  родителя / сопровождающего лица</label>
-                  <input class="parents-birthdays" type="date" name="parents-birthdays" placeholder="Дата">
-                </div>
-              </div>
-            </div>
-            <div class="row">
+            <div>
               <label class="family-composition__label" for="family-composition">Состав семьи?</label>
               <input class="family-composition" name="family-composition" placeholder="Состав семьи">
             </div>
@@ -100,19 +83,23 @@
           <div class="quiz__item">
             <h1>Знакомство. Вопросы. Часть 2</h1>
             <div class="row">
-              <label class="complaints__label" for="complaints">Что вас ко мне привело? Укажите основные жалобы</label>
-              <textarea class="complaints" name="complaints" placeholder="Расскажите, что вас привело" rows="3"></textarea>
+              <label class="complaints__label" for="complaints">Жалобы</label>
+              <textarea class="complaints" name="complaints" placeholder="Расскажите подробнее" rows="3"></textarea>
             </div>
             <div class="row">
               <div class="quiz-grid">
                 <p class="quiz-grid__annotation">Социальная среда, в которой находится ребенок</p>
                 <div class="quiz-grid__elem">
-                  <input class="checkbox environment-school-kindergarten" type="radio" name="environment-school-kindergarten" value="Школа">
-                  <label class="environment-school-kindergarten__label" for="environment-school-kindergarten">Школа</label>
+                  <input class="checkbox environment-school" type="checkbox" name="environment-school" value="Школа">
+                  <label class="environment-school__label" for="environment-school">Школа</label>
                 </div>
                 <div class="quiz-grid__elem">
-                  <input class="checkbox environment-school-kindergarten" type="radio" name="environment-school-kindergarten" value="Детский сад">
-                  <label class="environment-school-kindergarten__label" for="environment-school-kindergarten">Детский сад</label>
+                  <input class="checkbox environment-kindergarten" type="checkbox" name="environment-kindergarten" value="Детский сад">
+                  <label class="environment-kindergarten__label" for="environment-kindergarten">Детский сад</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox environment-home" type="checkbox" name="environment-home" value="Дом">
+                  <label class="environment-home__label" for="environment-home">Дом</label>
                 </div>
               </div>
             </div>
@@ -208,6 +195,10 @@
                   <input class="checkbox part-one-ari-gripp" type="checkbox" name="part-one-ari-gripp" value="ОРЗ, ГРИПП">
                   <label class="part-one-ari-gripp__label" for="part-one-ari-gripp">ОРЗ, ГРИПП</label>
                 </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-one-nothing" type="checkbox" name="part-one-nothing" value="ничего-из-перечисленного">
+                  <label class="part-one-nothing__label" for="part-one-nothing">Ничего из перечисленного</label>
+                </div>
               </div>
             </div>
             <input class="part-one-other" type="text" name="part-one-other" placeholder="Другое">
@@ -243,6 +234,10 @@
                 <div class="quiz-grid__elem">
                   <input class="checkbox part-two-high-blood-pressure" type="checkbox" name="part-two-high-blood-pressure" value="Повышение артериального давления">
                   <label class="part-two-high-blood-pressure__label" for="part-two-high-blood-pressure">Повышение артериального давления</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-nothing" type="checkbox" name="part-two-nothing" value="ничего-из-перечисленного">
+                  <label class="part-two-nothing__label" for="part-two-nothing">Ничего из перечисленного</label>
                 </div>
               </div>
             </div>
@@ -306,12 +301,12 @@
           <div class="quiz__item">
             <h1>Родовая деятельность. Часть 1</h1>
             <div class="row">
-              <label class="timing-age__label" for="timing-age">Роды наступили на сроке  <br>(оставьте пустым, если не помните)</label>
+              <label class="timing-age__label" for="timing-age">Роды наступили на сроке</label>
               <input class="timing-age" type="text" name="timing-age" placeholder="сроки">
             </div>
+            <p class="quiz-grid__annotation">Роды:</p>
             <div class="row">
               <div class="quiz-grid">
-                <p class="quiz-grid__annotation">Роды:</p>
                 <div class="quiz-grid__elem">
                   <input class="checkbox birth-independent" type="checkbox" name="birth-independent" value="самостоятельные">
                   <label class="birth-independent__label" for="birth-independent">самостоятельные</label>
@@ -376,7 +371,7 @@
             <h1>Родовая деятельность. Часть 3</h1>
             <div class="row">
               <div class="quiz-grid">
-                <p class="quiz-grid__annotation">анестезия:</p>
+                <p class="quiz-grid__annotation">Анестезия:</p>
                 <div class="quiz-grid__elem">
                   <input class="checkbox anesthesia-local-general" type="radio" name="anesthesia-local-general" value="местная">
                   <label class="anesthesia-local-general__label" for="anesthesia-local-general">местная</label>
@@ -521,6 +516,10 @@
                   <input class="checkbox birth-two-asphyxiation" type="checkbox" name="asphyxiation" value="асфиксия">
                   <label class="birth-two-asphyxiation__label" for="asphyxiation">асфиксия</label>
                 </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-nothing" type="checkbox" name="nothing" value="ничего-из-перечисленного">
+                  <label class="birth-two-nothing__label" for="nothing">ничего из перечисленного</label>
+                </div>
               </div>
             </div>
             <input class="birth-readmore" type="text" name="birth-readmore" placeholder="подробнее">
@@ -635,9 +634,22 @@
                   <label class="motor-functions-crowled-since__label" for="crowled-since">Ползал с</label>
                   <input class="motor-functions-crowled-since" type="number" name="crowled-since" placeholder="мес">
                 </div>
+              </div>
+            </div>
+            <p><strong>Ползал:</strong></p>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
                 <div class="quiz-grid__elem quiz-grid__elem--num">
-                  <label class="walking-since__label" for="walking-since">Самостоятельно ходить начал с</label>
-                  <input class="walking-since" type="number" name="walking-since" placeholder="мес">
+                  <input class="motor-functions-crowled-quantity" type="radio" name="crowled-quantity" value="много">
+                  <label class="motor-functions-crowled-quantity__label" for="crowled-quantity">много</label>
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <input class="motor-functions-crowled-quantity" type="radio" name="crowled-quantity" value="мало">
+                  <label class="motor-functions-crowled-quantity__label" for="crowled-quantity">мало</label>
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <input class="motor-functions-crowled-quantity" type="radio" name="crowled-quantity" value="не-ползал-вообще">
+                  <label class="motor-functions-crowled-quantity__label" for="crowled-quantity">не ползал вообще</label>
                 </div>
               </div>
             </div>
@@ -648,6 +660,14 @@
           </div>
           <div class="quiz__item">
             <h1>Моторные функции. Часть 2</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="walking-since__label" for="walking-since">Самостоятельно ходить начал с</label>
+                  <input class="walking-since" type="number" name="walking-since" placeholder="мес">
+                </div>
+              </div>
+            </div>
             <div class="row">
               <div class="quiz-grid">
                 <p class="quiz-grid__annotation"><strong>Особенности дебюта ходьбы:</strong></p>
@@ -743,8 +763,6 @@
             <div class="row">
               <label class="up-to-one-drugs__label" for="up-to-one-drugs">Какие лекарственные препараты ребенок принимал до года:</label>
               <textarea class="up-to-one-drugs" name="up-to-one-drugs" placeholder="расскажите об этом" rows="3"></textarea>
-              <label class="up-to-one-leading-hand__label" for="up-to-one-leading-hand">Какой рукой предпочтительно манипулировал до года:</label>
-              <textarea class="up-to-one-leading-hand" name="up-to-one-leading-hand" placeholder="расскажите об этом" rows="3"></textarea>
             </div>
             <div class="navigation">
               <div class="navigation__prev"><a href="#">Назад</a></div>
@@ -813,6 +831,10 @@
             </div>
             <textarea class="supervision-readmore" name="supervision-readmore" placeholder="кратко опишите причину обращения к специалисту"></textarea>
             <div class="row">
+              <label class="up-to-one-leading-hand__label" for="up-to-one-leading-hand">Какой рукой предпочтительно манипулировал до года:</label>
+              <textarea class="up-to-one-leading-hand" name="up-to-one-leading-hand" placeholder="расскажите об этом" rows="3"></textarea>
+            </div>
+            <div class="row">
               <div class="quiz-grid">
                 <p class="quiz-grid__annotation"><strong>Какой рукой предпочтительно манипулирует в настоящее время?</strong></p>
                 <div class="quiz-grid__elem">
@@ -851,7 +873,7 @@
                 <textarea class="sleeping-habits" name="sleeping-habits" placeholder="расскажите об этом" rows="3"></textarea>
               </div>
               <div>
-                <label class="ending-of-breastfeeding__label" for="ending-of-breastfeeding">Грудное вскармливание завершили в возрасте</label>
+                <label class="ending-of-breastfeeding__label" for="ending-of-breastfeeding">Грудное вскармливание завершено в возрасте</label>
                 <textarea class="ending-of-breastfeeding" name="ending-of-breastfeeding" placeholder="расскажите об этом" rows="3"></textarea>
               </div>
             </div>

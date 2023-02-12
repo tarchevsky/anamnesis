@@ -1,12 +1,11 @@
 <?php 
-$agreement = $_POST['agreement-input']; // Клиент согласие на использование персональных данных дал
-$childsCode = $_POST['childs-code']; // Код клиента
-$childsDate = $_POST['childs-date']; // Дата рождения ребенка
-$childsAge = $_POST['childs-age']; // Возраст ребенка
-$parentsBirthdays = $_POST['parents-birthdays']; // Дата рождения родителя / сопровождающего лица
+$agreement = $_POST['agreement-input']; // Согласие на использование персональных данных дал
+$childsCode = $_POST['childs-code']; // Код
 $familyComposition = $_POST['family-composition']; // Состав семьи
-$complaints = $_POST['complaints']; // Что вас ко мне привело? Укажите основные жалобы
-$environmentSchoolKindergarten = $_POST['environment-school-kindergarten']; // Социальная среда,  в которой находится ребенок (школа / детский сад)
+$complaints = $_POST['complaints']; // Жалобы
+$environmentSchool = $_POST['environment-school']; // Социальная среда,  в которой находится ребенок. Школа
+$environmentKindergarten = $_POST['environment-kindergarten']; // Социальная среда,  в которой находится ребенок. Детский сад
+$environmentHome = $_POST['environment-home']; // Социальная среда,  в которой находится ребенок. Дом
 $momAge = $_POST['mom-age']; // Возраст матери
 $dadAge = $_POST['dad-age']; // Возраст отца
 $infertility = $_POST['infertility']; // Имело место лечение по поводу бесплодия
@@ -17,6 +16,7 @@ $partOneBleeding = $_POST['part-one-bleeding']; // Течение беремен
 $partOnePastInfections = $_POST['part-one-past-infections']; // Течение беременности. Первая половина. Перенесенные инфекции
 $partOneAnemia = $_POST['part-one-anemia']; // Течение беременности. Первая половина. Анемия
 $partOneAriGripp = $_POST['part-one-ari-gripp']; // Течение беременности. Первая половина. ОРЗ, ГРИПП
+$partOneNothing = $_POST['part-one-nothing']; // Течение беременности. Первая половина. Ничего из перечисленного
 $partOneOther = $_POST['part-one-other']; // Течение беременности. Первая половина. Другое
 $partTwoToxicosis = $_POST['part-two-toxicosis']; // Течение беременности. Вторая половина. Токсикоз
 $partTwoAnemia = $_POST['part-two-anemia']; // Течение беременности. Вторая половина. Анемия
@@ -24,6 +24,7 @@ $partTwoNephropathy = $_POST['part-two-nephropathy']; // Течение бере
 $partTwoRapidWeightGain = $_POST['part-two-rapid-weight-gain']; // Течение беременности. Вторая половина. Быстрый набор веса
 $partTwoLowBloodPressure = $_POST['part-two-low-blood-pressure']; // Течение беременности. Вторая половина. Понижение артериального давления
 $partTwoHighBloodPressure = $_POST['part-two-high-blood-pressure']; // Течение беременности. Вторая половина. Повышение артериального давления
+$partTwoNothing = $_POST['part-two-nothing']; // Течение беременности. Вторая половина. Ничего из перечисленного
 $partTwoAggravation = $_POST['part-two-aggravation']; // Течение беременности. Вторая половина. Обострение хронических заболеваний
 $partTwoPsychotraumaticSituations = $_POST['part-two-psychotraumatic-situations']; // Течение беременности. Вторая половина. Психотравмирующие ситуации
 $partTwoIrritability = $_POST['part-two-irritability']; // Течение беременности. Вторая половина. Психологическое состояние во время беременности. раздражительность
@@ -65,6 +66,7 @@ $umbilicalCord = $_POST['umbilical-cord']; // короткая пуповина
 $infection = $_POST['infection']; // внутриутробная инфекция
 $delay = $_POST['delay']; // внутриутробная задержка развития (ВУЗР)
 $asphyxiation = $_POST['asphyxiation']; // асфиксия
+$nothing = $_POST['nothing']; // ничего из перечисленного
 $birthReadmore = $_POST['birth-readmore']; // При рождении имело место: подробнее
 $conclusion = $_POST['conclusion']; // Заключение после стационара
 $restlessness = $_POST['restlessness']; // Развитие до года. Наблюдалось: двигательное беспокойство
@@ -88,6 +90,7 @@ $set = $_POST['set']; // Моторные функции: Самостоятел
 $turnedOver = $_POST['turned-over']; // Моторные функции: Самостоятельно переворачивался
 $grabbedToys = $_POST['grabbed-toys']; // Моторные функции: Хватал игрушки с
 $crowledSince = $_POST['crowled-since']; // Моторные функции: Ползал с
+$crowledQuantity = $_POST['crowled-quantity']; // Моторные функции: Ползал (много/мало/не ползал вообще)
 $walkingSince = $_POST['walking-since']; // Моторные функции: Самостоятельно ходить начал с
 $debutFalling = $_POST['debut-falling']; // Моторные функции. Особенности дебюта ходьбы. часто падал
 $debutAfraidToWalk = $_POST['debut-afraid-to-walk']; // Моторные функции. Особенности дебюта ходьбы. боялся самостоятельно ходить
@@ -148,7 +151,7 @@ $mail->Username = 'marybelova-psy@yandex.ru';                 // Наш логи
 $mail->Password = 'pklliiewyjlwzrwt';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
- 
+
 $mail->setFrom('marybelova-psy@yandex.ru', 'Квиз - Анамнез');   // От кого письмо
 $mail->addAddress('marybelova-psy@yandex.ru');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
@@ -162,22 +165,17 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $mail->Subject = 'Анамнез ' . $childsCode . '';
 $mail->Body    = '
     <h1 style="font-size: 34px;">Знакомство</h1> <br>
-    <strong>Согласие клиента на работу с персональными данными:</strong> ' . $agreement . ' <br>
-    <strong>Код клиента:</strong> ' . $childsCode . ' <br>
-    <strong>ФИО ребенка:</strong><br>
-    <strong>Дата рождения ребенка:</strong> ' . $childsDate . '<br>
-    <strong>Возраст ребенка:</strong> ' . $childsAge . '<br>
-    <strong>ФИО родителя / сопровождающего лица:</strong><br>
-    <strong>Дата рождения родителя / сопровождающего лица:</strong> ' . $parentsBirthdays . '<br>
+    <strong>Согласие на работу с персональными данными:</strong> ' . $agreement . ' <br>
+    <strong>Код:</strong> ' . $childsCode . ' <br>
     <strong>Состав семьи:</strong> ' . $familyComposition . '<br>
-    <strong>Социальная среда,  в которой находится ребенок (школа / детский сад):</strong> ' . $environmentSchoolKindergarten . '<br>
+    <strong>Социальная среда,  в которой находится ребенок (школа / детский сад):</strong> ' . $environmentSchool . ' ' . $environmentKindergarten . ' ' . $environmentHome . ' <br>
     <strong>Что вас ко мне привело? Укажите основные жалобы:</strong> ' . $complaints . '<br>
     <strong>На момент начала беременности возраст(матери / отца): мать:</strong> ' . $momAge . ' / отец: ' . $dadAge .'<br>
     <strong>Имело место лечение по поводу бесплодия</strong>: ' . $infertility . '<br>
     <strong>Замершая беременность</strong>: ' . $failedPregnancy . ' <br>
     <strong>Угроза прерывания беременности</strong>: ' . $threatenedAbortion . ' <br>
-    <strong>Течение беременности I </strong>: ' . $partOneToxicosis . ' ' . $partOneBleeding . ' ' . $partOnePastInfections . ' ' . $partOneAnemia . ' ' . $partOneAriGripp . ' другое: ' . $partOneOther . ' <br>
-    <strong>Течение беременности II</strong>: ' . $partTwoToxicosis . ' ' . $partTwoAnemia . ' ' . $partTwoNephropathy . ' ' . $partTwoRapidWeightGain . ' ' . $partTwoLowBloodPressure . ' ' . $partTwoHighBloodPressure . ' <br>
+    <strong>Течение беременности I </strong>: ' . $partOneToxicosis . ' ' . $partOneBleeding . ' ' . $partOnePastInfections . ' ' . $partOneAnemia . ' ' . $partOneAriGripp . ' ' . $partOneNothing . ' другое: ' . $partOneOther . ' <br>
+    <strong>Течение беременности II</strong>: ' . $partTwoToxicosis . ' ' . $partTwoAnemia . ' ' . $partTwoNephropathy . ' ' . $partTwoRapidWeightGain . ' ' . $partTwoLowBloodPressure . ' ' . $partTwoHighBloodPressure . ' ' . $partTwoNothing . ' <br>
     <strong>Течение беременности II. Обострение хронических заболеваний</strong>: ' . $partTwoAggravation . ' <br>
     <strong>Течение беременности II. Психотравмирующие ситуации</strong>: ' . $partTwoPsychotraumaticSituations . ' <br>
     <strong>Течение беременности II. Психологическое состояние на момент беременности</strong>: ' . $partTwoIrritability . ' ' . $partTwoTearfulness . ' ' . $partTwoTired . ' ' . $partTwoAggression . ' Другое: ' . $partTwoOther . ' <br>
@@ -193,7 +191,7 @@ $mail->Body    = '
     <strong>При рождении. Оценка по шкале Апгар</strong>: ' . $apgar . ' <br>
     <strong>При рождении. Первое кормление наступило на</strong>: ' . $feeding . ' сутки <br>
     <strong>При рождении. Грудь взял</strong>: ' . $how . ' <br>
-    <strong>При рождении. Имело место</strong>: ' . $waters . ' ' . $prosecution . ' ' . $hypoxia . ' ' . $fetus . ' ' . $umbilicalCord . ' ' . $infection . ' ' . $delay . ' ' . $asphyxiation . ' Подробнее: ' . $birthReadmore . ' <br>
+    <strong>При рождении. Имело место</strong>: ' . $waters . ' ' . $prosecution . ' ' . $hypoxia . ' ' . $fetus . ' ' . $umbilicalCord . ' ' . $infection . ' ' . $delay . ' ' . $asphyxiation . ' ' . $nothing . ' Подробнее: ' . $birthReadmore . ' <br>
     <strong>При рождении. Заключение после стационара</strong>: ' . $conclusion . ' <br>
     <strong>Развитие до года. Наблюдалось</strong>: ' . $restlessness . ' ' . $triangle . ' ' . $handTremor . ' ' . $blushing . ' ' . $hypertonicicty . ' ' . $violation . ' ' . $chinTremor . ' ' . $shudders . ' ' . $hypotonus . ' ' . $pulling . ' ' . $screaming . ' ' . $gi . ' ' . $colic . ' ' . $regurgitation . ' ' . $constipation . ' Другое: ' . $uptoayearReadmore . ' <br>
     <strong>Моторные функции: Держал голову с</strong>: ' . $held . ' <br>
@@ -201,6 +199,7 @@ $mail->Body    = '
     <strong>Моторные функции: Самостоятельно переворачивался</strong>: ' . $turnedOver . ' <br>
     <strong>Моторные функции: Хватал игрушки с</strong>: ' . $grabbedToys . ' <br>
     <strong>Моторные функции: Ползал с</strong>: ' . $crowledSince . ' <br>
+    <strong>Моторные функции: Ползал (много/мало/не ползал вообще)</strong>: ' . $crowledQuantity . ' <br>
     <strong>Моторные функции: Самостоятельно ходить начал с</strong>: ' . $walkingSince . ' <br>
     <strong>Моторные функции: Особенности дебюта ходьбы</strong>: ' . $debutFalling . ' ' . $debutAfraidToWalk . ' ' . $debutSlanted . ' ' . $debutRun . ' ' . $debutOnYourToes . ' Подробнее: ' . $debutReadmore . ' <br>
     <strong>Речевое развитие: Лепет с</strong>: ' . $speechLepetus . ' <br>

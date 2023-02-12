@@ -95,16 +95,18 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('form').submit(function (e) {
   //     return;
   // }
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
-    type: 'POST',
-    url: '../../mailer/smart.php',
-    data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize()
-  }).done(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('form').trigger('reset');
-  });
-  alert('Форма отправлена! Ожидайте ответа от специалиста');
-  return false;
+  if (window.confirm("Завершаем, подтвердить отправку формы? ")) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
+      type: 'POST',
+      url: '../../mailer/smart.php',
+      data: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).serialize()
+    }).done(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').val('');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('form').trigger('reset');
+    });
+    alert('Квиз пройден');
+    return false;
+  }
 });
 
 /***/ }),
@@ -204,12 +206,11 @@ var input = document.querySelectorAll('input'),
   inputRadio = document.querySelectorAll('input[type="radio"]'),
   inputCheckbox = document.querySelectorAll('input[type="checkbox"]'),
   childsCode = document.querySelector('.childs-code'),
-  childsDate = document.querySelector('.childs-date'),
-  childsAge = document.querySelector('.childs-age'),
-  parentsBirthdays = document.querySelector('.parents-birthdays'),
   familyComposition = document.querySelector('.family-composition'),
   complaints = document.querySelector('.complaints'),
-  environmentSchoolKindergarten = document.querySelector('.environment-school-kindergarten'),
+  environmentSchool = document.querySelector('.environment-school'),
+  environmentKindergarten = document.querySelector('.environment-kindergarten'),
+  environmentHome = document.querySelector('.environment-home'),
   momAge = document.querySelector('.mom-age'),
   dadAge = document.querySelector('.dad-age'),
   infertility = document.querySelector('.infertility'),
@@ -220,6 +221,7 @@ var input = document.querySelectorAll('input'),
   partOnePastInfections = document.querySelector('.part-one-past-infections'),
   partOneAnemia = document.querySelector('.part-one-anemia'),
   partOneAriGripp = document.querySelector('.part-one-ari-gripp'),
+  partOneNothing = document.querySelector('.part-one-nothing'),
   partOneOther = document.querySelector('.part-one-other'),
   partTwoToxicosis = document.querySelector('.part-two-toxicosis'),
   partTwoAnemia = document.querySelector('.part-two-anemia'),
@@ -227,6 +229,7 @@ var input = document.querySelectorAll('input'),
   partTwoRapidWeightGain = document.querySelector('.part-two-rapid-weight-gain'),
   partTwoLowBloodPressure = document.querySelector('.part-two-low-blood-pressure'),
   partTwoHighBloodPressure = document.querySelector('.part-two-high-blood-pressure'),
+  partTwoNothing = document.querySelector('.part-two-nothing'),
   partTwoAggravation = document.querySelector('.part-two-aggravation'),
   partTwoPsychotraumaticSituations = document.querySelector('.part-two-psychotraumatic-situations'),
   partTwoIrritability = document.querySelector('.part-two-irritability'),
@@ -267,6 +270,7 @@ var input = document.querySelectorAll('input'),
   infection = document.querySelector('.birth-two-infection'),
   delay = document.querySelector('.birth-two-delay'),
   asphyxiation = document.querySelector('.birth-two-asphyxiation'),
+  nothing = document.querySelector('.birth-two-nothing'),
   birthReadmore = document.querySelector('.birth-readmore'),
   conclusion = document.querySelector('.birth-two-conclusion'),
   restlessness = document.querySelector('.uptoayear-restlessness'),
@@ -290,6 +294,7 @@ var input = document.querySelectorAll('input'),
   turnedOver = document.querySelector('.motor-functions-turned-over'),
   grabbedToys = document.querySelector('.motor-functions-grabbed-toys'),
   crowledSince = document.querySelector('.motor-functions-crowled-since'),
+  crowledQuantity = document.querySelector('.motor-functions-crowled-quantity'),
   walkingSince = document.querySelector('.walking-since'),
   debutFalling = document.querySelector('.debut-falling'),
   debutAfraidToWalk = document.querySelector('.debut-afraid-to-walk'),
@@ -331,12 +336,11 @@ var input = document.querySelectorAll('input'),
 var data = {
   agreementCheckboxField: '',
   childsCodeField: '',
-  childsDateField: '',
-  childsAgeField: '',
-  parentsBirthdaysField: '',
   familyCompositionField: '',
   complaintsField: '',
-  environmentSchoolKindergartenField: '',
+  environmentSchoolField: '',
+  environmentKindergartenField: '',
+  environmentHomeField: '',
   momAgeField: '',
   dadAgeField: '',
   infertilityField: '',
@@ -347,6 +351,7 @@ var data = {
   partOnePastInfectionsField: '',
   partOneAnemiaField: '',
   partOneAriGrippField: '',
+  partOneNothingField: '',
   partOneOtherField: '',
   partTwoToxicosisField: '',
   partTwoAnemiaField: '',
@@ -354,6 +359,7 @@ var data = {
   partTwoRapidWeightGainField: '',
   partTwoLowBloodPressureField: '',
   partTwoHighBloodPressureField: '',
+  partTwoNothingField: '',
   partTwoAggravationField: '',
   partTwoPsychotraumaticSituationsField: '',
   partTwoIrritabilityField: '',
@@ -394,6 +400,7 @@ var data = {
   infectionField: '',
   delayField: '',
   asphyxiationField: '',
+  nothingField: '',
   birthReadmoreField: '',
   conclusionField: '',
   restlessnessField: '',
@@ -417,6 +424,7 @@ var data = {
   turnedOverField: '',
   grabbedToysField: '',
   crowledSinceField: '',
+  crowledQuantityField: '',
   walkingSinceField: '',
   debutFallingField: '',
   debutAfraidToWalkField: '',
@@ -460,12 +468,11 @@ function setData() {
   localStorage.setItem('data', JSON.stringify(data));
   data.agreementCheckboxField = agreementCheckbox.checked;
   data.childsCodeField = childsCode.value;
-  data.childsDateField = childsDate.value;
-  data.childsAgeField = childsAge.value;
-  data.parentsBirthdaysField = parentsBirthdays.value;
   data.familyCompositionField = familyComposition.value;
   data.complaintsField = complaints.value;
-  data.environmentSchoolKindergartenField = environmentSchoolKindergarten.checked;
+  data.environmentSchoolField = environmentSchool.checked;
+  data.environmentKindergartenField = environmentKindergarten.checked;
+  data.environmentHomeField = environmentHome.checked;
   data.momAgeField = momAge.value;
   data.dadAgeField = dadAge.value;
   data.infertilityField = infertility.checked;
@@ -476,6 +483,7 @@ function setData() {
   data.partOnePastInfectionsField = partOnePastInfections.checked;
   data.partOneAnemiaField = partOneAnemia.checked;
   data.partOneAriGrippField = partOneAriGripp.checked;
+  data.partOneNothing = partOneNothing.checked;
   data.partOneOtherField = partOneOther.value;
   data.partTwoToxicosisField = partTwoToxicosis.checked;
   data.partTwoAnemiaField = partTwoAnemia.checked;
@@ -483,6 +491,7 @@ function setData() {
   data.partTwoRapidWeightGainField = partTwoRapidWeightGain.checked;
   data.partTwoLowBloodPressureField = partTwoLowBloodPressure.checked;
   data.partTwoHighBloodPressureField = partTwoHighBloodPressure.checked;
+  data.partTwoNothingField = partTwoNothing.checked;
   data.partTwoAggravationField = partTwoAggravation.value;
   data.partTwoPsychotraumaticSituationsField = partTwoPsychotraumaticSituations.value;
   data.partTwoIrritabilityField = partTwoIrritability.checked;
@@ -523,6 +532,7 @@ function setData() {
   data.infectionField = infection.checked;
   data.delayField = delay.checked;
   data.asphyxiationField = asphyxiation.checked;
+  data.nothingField = nothing.checked;
   data.birthReadmoreField = birthReadmore.value;
   data.conclusionField = conclusion.value;
   data.restlessnessField = restlessness.checked;
@@ -546,6 +556,7 @@ function setData() {
   data.turnedOverField = turnedOver.value;
   data.grabbedToysField = grabbedToys.value;
   data.crowledSinceField = crowledSince.value;
+  data.crowledQuantityField = crowledQuantity.value;
   data.walkingSinceField = walkingSince.value;
   data.debutFallingField = debutFalling.checked;
   data.debutAfraidToWalkField = debutAfraidToWalk.checked;
@@ -597,12 +608,11 @@ function getData() {
   var data = JSON.parse(localStorage.getItem('data'));
   agreementCheckbox.checked = data.agreementCheckboxField;
   childsCode.value = data.childsCodeField;
-  childsDate.value = data.childsDateField;
-  childsAge.value = data.childsAgeField;
-  parentsBirthdays.value = data.parentsBirthdaysField;
   familyComposition.value = data.familyCompositionField;
   complaints.value = data.complaintsField;
-  environmentSchoolKindergarten.checked = data.environmentSchoolKindergartenField;
+  environmentSchool.checked = data.environmentSchoolField;
+  environmentKindergarten.checked = data.environmentKindergartenField;
+  environmentHome.checked = data.environmentHomeField;
   momAge.value = data.momAgeField;
   dadAge.value = data.dadAgeField;
   infertility.checked = data.infertilityField;
@@ -613,6 +623,7 @@ function getData() {
   partOnePastInfections.checked = data.partOnePastInfectionsField;
   partOneAnemia.checked = data.partOneAnemiaField;
   partOneAriGripp.checked = data.partOneAriGrippField;
+  partOneNothing.checked = data.partOneNothingField;
   partOneOther.value = data.partOneOtherField;
   partTwoToxicosis.checked = data.partTwoToxicosisField;
   partTwoAnemia.checked = data.partTwoAnemiaField;
@@ -620,6 +631,7 @@ function getData() {
   partTwoRapidWeightGain.checked = data.partTwoRapidWeightGainField;
   partTwoLowBloodPressure.checked = data.partTwoLowBloodPressureField;
   partTwoHighBloodPressure.checked = data.partTwoHighBloodPressureField;
+  partTwoNothing.checked = data.partTwoNothingField;
   partTwoAggravation.value = data.partTwoAggravationField;
   partTwoPsychotraumaticSituations.value = data.partTwoPsychotraumaticSituationsField;
   partTwoIrritability.checked = data.partTwoIrritabilityField;
@@ -660,6 +672,7 @@ function getData() {
   infection.checked = data.infectionField;
   delay.checked = data.delayField;
   asphyxiation.checked = data.asphyxiationField;
+  nothing.checked = data.nothingField;
   birthReadmore.value = data.birthReadmoreField;
   conclusion.value = data.conclusionField;
   restlessness.checked = data.restlessnessField;
@@ -682,7 +695,7 @@ function getData() {
   set.value = data.setField;
   turnedOver.value = data.turnedOverField;
   grabbedToys.value = data.grabbedToysField;
-  crowledSince.value = data.crowledSinceField;
+  crowledQuantity.value = data.crowledQuantityField;
   walkingSince.value = data.walkingSinceField;
   debutFalling.checked = data.debutFallingField;
   debutAfraidToWalk.checked = data.debutAfraidToWalkField;
@@ -735,21 +748,17 @@ input.forEach(function (item) {
     setData();
   });
 });
-console.log(environmentSchoolKindergarten.checked);
 inputRadio.forEach(function (item) {
   item.addEventListener('click', function () {
     setData();
-    console.log(item.checked);
   });
 });
 inputCheckbox.forEach(function (item) {
   item.addEventListener('click', function () {
     setData();
-    console.log(item.value);
   });
 });
 getData();
-console.log(parentsBirthdays.value);
 
 /***/ }),
 
