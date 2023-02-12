@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Нейропсихологический квиз | Квиз - анамнез для нейропсихолога</title>
+    <meta name="keywords" content="нейропсихолог, диагностика, исследование, развитие ребенка, квиз нейропсихолога">
+    <meta name="description" content="Этот нейропсихологический квиз нужен, чтобы проанализировать особенности развития ребёнка от момента беременности мамы до текущего времени.">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz">
+        <form class="form" id="form" action="#" method="POST">
+          <div class="quiz__item">
+            <div class="quiz-intro row">
+              <div class="quiz-intro__col">
+                <h1 class="quiz-heading">Начало приёма</h1>
+                <p>Здравствуйте. Вы находитесь на странице заполнения анамнеза.</p>
+                <p>Сбор анамнеза - важная часть нейропсихологического тестирования.</p>
+                <p>Мы обязательно познакомимся и поговорим очно, но сейчас необходимо получить первичные данные, чтобы  корректно выстроить исследование и собрать как можно больше сведений о ребенке, получить  более полную картину происходящего с ним.<br></p>
+                <p>Важной может оказаться каждая деталь из истории развития до настоящего момента.</p>
+                <p>Если не удается вспомнить какую-то деталь, напишите, что не помните или сомневаетесь в ответе.</p>
+              </div>
+              <div class="quiz-whoiam">
+                <div class="quiz-whoiam__avatar"><img src="../img/mary.png" alt="Мария, нейропсихолог и клинический психолог"></div>
+                <p class="quiz-whoiam__descr">Рахмани-Тарчевская Мария<br>Нейропсихолог, клинический психолог, <br>автор игр и пособий по детской нейроспихологии<br>МГУ имени М.В. Ломоносова</p>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__next"><a href="#">Заполнить анамнез</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Знакомство. Предисловие</h1>
+            <p>Все ваши ответы выгрузятся в удобный для интерпретации формат, результаты мы обсудим на личной встрече. Информация конфиденциальна.<br>Для вашего чувства безопасности и  лучшего шифрования данных, напишите вместо имени и фамилии пятизначный код, полученный у специалиста.<br>А имена и фамилии сообщите мне отдельно.</p>
+            <div class="agreement">
+              <input class="agreement-input" type="checkbox" name="agreement-input" value="Дано">
+              <div class="agreement__descr">Перед заполнением квиза подтвердите, что согласны с обработкой персональных данных и <a href="./privacy.html">политикой конфиденциальности</a></div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Знакомство. Вопросы. Часть 1</h1>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div>
+                  <label class="childs-code-label" for="childs-code">Код клиента</label>
+                  <input class="childs-code" type="text" name="childs-code" placeholder="Код">
+                </div>
+                <div>
+                  <label class="childs-date-label" for="childs-date">Дата рождения ребенка</label>
+                  <input class="childs-date" type="date" name="childs-date" placeholder="Дата рождения">
+                </div>
+                <div>
+                  <label class="childs-age-label" for="childs-age">Возраст ребёнка</label>
+                  <input class="childs-age" type="number" name="childs-age" placeholder="Возраст">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div>
+                  <label class="parents-birthdays__label" for="parents-birthdays">Дата рождения  родителя / сопровождающего лица</label>
+                  <input class="parents-birthdays" type="date" name="parents-birthdays" placeholder="Дата">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <label class="family-composition__label" for="family-composition">Состав семьи?</label>
+              <input class="family-composition" name="family-composition" placeholder="Состав семьи">
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Знакомство. Вопросы. Часть 2</h1>
+            <div class="row">
+              <label class="complaints__label" for="complaints">Что вас ко мне привело? Укажите основные жалобы</label>
+              <textarea class="complaints" name="complaints" placeholder="Расскажите, что вас привело" rows="3"></textarea>
+            </div>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Социальная среда, в которой находится ребенок</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox environment-school-kindergarten" type="radio" name="environment-school-kindergarten" value="Школа">
+                  <label class="environment-school-kindergarten__label" for="environment-school-kindergarten">Школа</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox environment-school-kindergarten" type="radio" name="environment-school-kindergarten" value="Детский сад">
+                  <label class="environment-school-kindergarten__label" for="environment-school-kindergarten">Детский сад</label>
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Течение беременности. Основные моменты. Часть 1</h1>
+            <p>В процессе заполнения можно выбирать несколько вариантов ответа, а можно пропускать графы.</p>
+            <p>На момент беременности возраст:</p>
+            <div class="row">
+              <div class="mom">
+                <input class="mom-age" type="number" name="mom-age" placeholder="Мамы">
+              </div>
+              <div class="dad">
+                <input class="dad-age" type="number" name="dad-age" placeholder="Отца">
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Течение беременности. Основные моменты. Часть 2</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p>Имело место лечение по поводу бесплодия</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox infertility" type="radio" name="infertility" value="Да">
+                  <label class="infertility__label" for="infertility">Да</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox infertility" type="radio" name="infertility" value="Нет">
+                  <label class="infertility__label" for="infertility">Нет</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Замершая беременность</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox failed-pregnancy" type="radio" name="failed-pregnancy" value="Да">
+                  <label class="failed-pregnancy__label" for="failed-pregnancy">Да</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox failed-pregnancy" type="radio" name="failed-pregnancy" value="Нет">
+                  <label class="failed-pregnancy__label" for="failed-pregnancy">Нет</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="quiz-grid">
+                <p>Угроза прерывания беременности (не отмечайте, если не было)</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox threatened-abortion" type="radio" name="threatened-abortion" value="Да">
+                  <label class="threatened-abortionlabel" for="threatened-abortion">Да</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox threatened-abortion" type="radio" name="threatened-abortion" value="Нет">
+                  <label class="threatened-abortion-label" for="threatened-abortion">Нет</label>
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Течение беременности. I половина</h1>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-one-toxicosis" type="checkbox" name="part-one-toxicosis" value="Токсикоз">
+                  <label class="part-one-toxicosis__label" for="part-one-toxicosis">Токсикоз</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-one-bleeding" type="checkbox" name="part-one-bleeding" value="Кровотечение">
+                  <label class="part-one-bleeding__label" for="part-one-bleeding">Кровотечение</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-one-past-infections" type="checkbox" name="part-one-past-infections" value="Перенесенные инфекции">
+                  <label class="part-one-past-infections__label" for="part-one-past-infections">Перенесенные инфекции</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-one-anemia" type="checkbox" name="part-one-anemia" value="Анемия">
+                  <label class="part-one-anemia__label" for="part-one-anemia">Анемия</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-one-ari-gripp" type="checkbox" name="part-one-ari-gripp" value="ОРЗ, ГРИПП">
+                  <label class="part-one-ari-gripp__label" for="part-one-ari-gripp">ОРЗ, ГРИПП</label>
+                </div>
+              </div>
+            </div>
+            <input class="part-one-other" type="text" name="part-one-other" placeholder="Другое">
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Течение беременности. II половина. Часть 1</h1>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-toxicosis" type="checkbox" name="part-two-toxicosis" value="Токсикоз">
+                  <label class="part-two-toxicosis__label" for="part-two-toxicosis">Токсикоз</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-anemia" type="checkbox" name="part-two-anemia" value="Анемия">
+                  <label class="part-two-anemia__label" for="part-two-anemia">Анемия</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-nephropathy" type="checkbox" name="part-two-nephropathy" value="Нефропатия">
+                  <label class="part-two-nephropathy__label" for="part-two-nephropathy">Нефропатия</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-rapid-weight-gain" type="checkbox" name="part-two-rapid-weight-gain" value="Быстрый набор веса">
+                  <label class="part-two-rapid-weight-gain__label" for="part-two-rapid-weight-gain">Быстрый набор веса</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-low-blood-pressure" type="checkbox" name="part-two-low-blood-pressure" value="Понижение артериального давления">
+                  <label class="part-two-low-blood-pressure__label" for="part-two-low-blood-pressure">Понижение артериального давления</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-high-blood-pressure" type="checkbox" name="part-two-high-blood-pressure" value="Повышение артериального давления">
+                  <label class="part-two-high-blood-pressure__label" for="part-two-high-blood-pressure">Повышение артериального давления</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label class="part-two-aggravation__label" for="part-two-aggravation">Обострение хронических заболеваний <br>(оставьте пустым, если не было)</label>
+                <textarea class="part-two-aggravation" name="part-two-aggravation" placeholder="опишите" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="part-two-psychotraumatic-situations__label" for="part-two-psychotraumatic-situations">Психотравмирующие ситуации <br>(оставьте пустым, если не было)</label>
+                <textarea class="part-two-psychotraumatic-situations" name="part-two-psychotraumatic-situations" placeholder="опишите" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Течение беременности. II половина. Часть 2</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Психологическое состояние на момент беременности</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-irritability" type="checkbox" name="part-two-irritability" value="раздражительность">
+                  <label class="part-two-irritability__label" for="part-two-irritability">раздражительность</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-tearfulness" type="checkbox" name="part-two-tearfulness" value="плаксивость">
+                  <label class="part-two-tearfulness__label" for="part-two-tearfulness">плаксивость</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-tired" type="checkbox" name="part-two-tired" value="постоянное-чувство-усталости">
+                  <label class="part-two-tired__label" for="part-two-tired">постоянное чувство усталости</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-aggression" type="checkbox" name="part-two-aggression" value="агрессия">
+                  <label class="part-two-aggression__label" for="part-two-aggression">агрессия</label>
+                </div>
+              </div>
+            </div>
+            <input class="part-two-other" type="text" name="part-two-other" placeholder="Другое">
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Ожидаемый пол ребёнка:</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-sex-boy" type="checkbox" name="part-two-sex-boy" value="мальчик">
+                  <label class="part-two-sex-boy__label" for="part-two-sex-boy">мальчик</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox part-two-sex-girl" type="checkbox" name="part-two-sex-girl" value="девочка">
+                  <label class="part-two-sex-girl__label" for="part-two-sex-girl">девочка</label>
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Родовая деятельность. Часть 1</h1>
+            <div class="row">
+              <label class="timing-age__label" for="timing-age">Роды наступили на сроке  <br>(оставьте пустым, если не помните)</label>
+              <input class="timing-age" type="text" name="timing-age" placeholder="сроки">
+            </div>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Роды:</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-independent" type="checkbox" name="birth-independent" value="самостоятельные">
+                  <label class="birth-independent__label" for="birth-independent">самостоятельные</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-retrieved" type="checkbox" name="birth-retrieved" value="вызваны">
+                  <label class="birth-retrieved__label" for="birth-retrieved">вызваны</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-caesar input-condition" type="checkbox" name="birth-сaesar" value="оперативные">
+                  <label class="birth-caesar__label" for="birth-сaesar">оперативные (кесарево сечение):</label>
+                </div>
+              </div>
+            </div>
+            <!--p.quiz-grid__annotation оперативные (кесарево сечение):-->
+            <div class="row quiz-grid--withoutannotation input-result">
+              <div class="quiz-grid__elem">
+                <input class="checkbox birth" type="radio" name="birth" value="плановое">
+                <label class="birth-planned__label" for="birth">плановое</label>
+              </div>
+              <div class="quiz-grid__elem">
+                <input class="checkbox birth" type="radio" name="birth" value="вынужденное">
+                <label class="birth__label" for="birth">вынужденное</label>
+              </div>
+              <div class="quiz-grid__elem">
+                <input class="checkbox birth input-condition" type="radio" name="birth" value="экстренное">
+                <label class="birth-emergency__label" for="birth">экстренное</label>
+              </div>
+            </div>
+            <input class="birth-reason input-result" type="text" name="birth-reason" placeholder="по причине">
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Родовая деятельность. Часть 2</h1>
+            <p class="quiz-grid__annotation">Родовспоможение:</p>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-attendance-stimulation" type="checkbox" name="birth-attendance-stimulation" value="стимуляция">
+                  <label class="birth-attendance-stimulation__label" for="birth-attendance-stimulation">стимуляция</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-attendance-mechanically" type="checkbox" name="birth-attendance-mechanically" value="механическое-выдавливание-плода">
+                  <label class="birth-attendance-mechanically__label" for="birth-attendance-mechanically">механическое выдавливание плода</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-attendance-pliers" type="checkbox" name="birth-attendance-pliers" value="щипцы">
+                  <label class="birth-attendance-pliers__label" for="birth-attendance-pliers">щипцы</label>
+                </div>
+              </div>
+            </div>
+            <input class="birth-attendance-readmore" name="birth-attendance-readmore" placeholder="другое">
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Родовая деятельность. Часть 3</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">анестезия:</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox anesthesia-local-general" type="radio" name="anesthesia-local-general" value="местная">
+                  <label class="anesthesia-local-general__label" for="anesthesia-local-general">местная</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox anesthesia-local-general" type="radio" name="anesthesia-local-general" value="Общая">
+                  <label class="anesthesia-local-general__label" for="anesthesia-local-general">общая</label>
+                </div>
+              </div>
+            </div>
+            <label class="anesthesia-readmore__label" for="anesthesia-readmore">Рассказать подробнее</label>
+            <textarea class="anesthesia-readmore" name="anesthesia-readmore" placeholder="опишите" rows="3"></textarea>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>При рождении. Часть 1</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Ребенок закричал:</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox screamed-at-once" type="checkbox" name="screamed-at-once" value="сразу">
+                  <label class="screamed-at-once__label" for="screamed-at-once">сразу</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox screamed-after-suction" type="checkbox" name="screamed-after-suction" value="после-отсасывания-слизи">
+                  <label class="screamed-after-suction__label" for="screamed-after-suction">после отсасывания слизи</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox screamed-patting" type="checkbox" name="screamed-patting" value="после-похлопывания">
+                  <label class="screamed-patting__label" for="screamed-patting">после похлопывания</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox screamed-resuscitation input-condition" type="checkbox" name="screamed-resuscitation" value="проводилась-реанимация">
+                  <label class="screamed-resuscitation__label" for="screamed-resuscitation">проводилась реанимация</label>
+                </div>
+              </div>
+            </div>
+            <input class="screamed-readmore input-result" type="text" name="screamed-readmore" placeholder="подробнее">
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Предлежание:</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox breech" type="radio" name="breech" value="головное">
+                  <label class="breech__label" for="breech">головное</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox breech" type="radio" name="breech" value="ягодичное">
+                  <label class="breech__label" for="breech">ягодичное</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox breech" type="radio" name="breech" value="ножное">
+                  <label class="breech__label" for="breech">ножное</label>
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>При рождении. Часть 2</h1>
+            <div class="row">
+              <div>
+                <label class="growth__label" for="growth">Рост</label>
+                <input class="growth" type="text" name="growth" placeholder="рост">
+              </div>
+              <div>
+                <label class="weight__label" for="weight">Вес</label>
+                <input class="weight" type="text" name="weight" placeholder="вес">
+              </div>
+              <div>
+                <label class="apgar__label" for="apgar">Оценка по шкале Апгар</label>
+                <input class="apgar" type="text" name="apgar" placeholder="оценка">
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label class="feeding__label" for="feeding">Первое кормление наступило на</label>
+                <input class="feeding" type="text" name="feeding" placeholder="сутки">
+              </div>
+            </div>
+            <p class="quiz-grid__annotation">Грудь взял:</p>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem">
+                  <input class="checkbox took-how" type="radio" name="how" value="активно">
+                  <label class="took-how__label" for="how">активно</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox took-how" type="radio" name="how" value="вяло">
+                  <label class="took-how__label" for="how">вяло</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox took-how" type="radio" name="how" value="отказался">
+                  <label class="took-how__label" for="how">отказался</label>
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>При рождении. Часть 3</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation">Имело место:</p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-waters" type="checkbox" name="waters" value="зеленые-околоплодные-воды">
+                  <label class="birth-two-waters__label" for="waters">зеленые околоплодные воды</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-prosecution" type="checkbox" name="prosecution" value="обвитие-пуповины-вокруг-шеи-или-туловища">
+                  <label class="birth-two-prosecution__label" for="prosecution">обвитие пуповины вокруг шеи или туловища</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-hypoxia" type="checkbox" name="hypoxia" value="гипоксия">
+                  <label class="birth-two-hypoxia__label" for="hypoxia">гипоксия</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-fetus" type="checkbox" name="fetus" value="крупный-плод">
+                  <label class="birth-two-fetus__label" for="fetus">крупный плод</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-umbilical-cord" type="checkbox" name="umbilical-cord" value="короткая-пуповина">
+                  <label class="birth-two-umbilical-cord__label" for="umbilical-cord">короткая пуповина</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-infection" type="checkbox" name="infection" value="внутриутробная-инфекция">
+                  <label class="birth-two-infection__label" for="infection">внутриутробная инфекция</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-delay" type="checkbox" name="delay" value="внутриутробная-задержка-развития-(ВУЗР)">
+                  <label class="birth-two-delay__label" for="delay">внутриутробная задержка развития (ВУЗР)</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox birth-two-asphyxiation" type="checkbox" name="asphyxiation" value="асфиксия">
+                  <label class="birth-two-asphyxiation__label" for="asphyxiation">асфиксия</label>
+                </div>
+              </div>
+            </div>
+            <input class="birth-readmore" type="text" name="birth-readmore" placeholder="подробнее">
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>При рождении. Часть 4</h1>
+            <label class="birth-two-conclusion__label" for="conclusion">Заключение после стационара</label>
+            <textarea class="birth-two-conclusion" name="conclusion" placeholder="опишите" rows="3"></textarea>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Развитие ребенка до года</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation"><strong>Наблюдалось:</strong></p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-restlessness" type="checkbox" name="restlessness" value="двигательное-беспокойство">
+                  <label class="uptoayear-restlessness__label" for="restlessness">двигательное беспокойство</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-triangle" type="checkbox" name="triangle" value="синел/бледнел-носогубный-треугольник">
+                  <label class="uptoayear-triangle__label" for="triangle">синел/бледнел носогубный треугольник</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-hand-tremor" type="checkbox" name="hand-tremor" value="тремор-ручек">
+                  <label class="uptoayear-hand-tremor__label" for="hand-tremor">тремор ручек</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-blushing" type="checkbox" name="blushing" value="сильно-краснел-при-плаче">
+                  <label class="uptoayear-blushing__label" for="blushing">сильно краснел при плаче</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-hypertonicicty" type="checkbox" name="hypertonicicty" value="гипертонус">
+                  <label class="uptoayear-hypertonicicty__label" for="hypertonicicty">гипертонус</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-violation" type="checkbox" name="violation" value="нарушения-режима-сна">
+                  <label class="uptoayear-violation__label" for="violation">нарушения режима сна</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-chin-tremor" type="checkbox" name="chin-tremor" value="тремор-подбородка">
+                  <label class="uptoayear-chin-tremor__label" for="chin-tremor">тремор подбородка</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-shudders" type="checkbox" name="shudders" value="вздрагивания">
+                  <label class="uptoayear-shudders__label" for="shudders">вздрагивания</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-hypotonus" type="checkbox" name="hypotonus" value="гипотонус">
+                  <label class="uptoayear-hypotonus__label" for="hypotonus">гипотонус</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-pulling" type="checkbox" name="pulling" value="оттягивание-головы-назад">
+                  <label class="uptoayear-pulling__label" for="pulling">оттягивание головы назад</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-screaming" type="checkbox" name="screaming" value="закатывался-при-плаче">
+                  <label class="uptoayear-screaming__label" for="screaming">закатывался при плаче</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-gi" type="checkbox" name="gi" value="функциональная-незрелость-ЖКТ">
+                  <label class="uptoayear-gi__label" for="gi">функциональная незрелость ЖКТ</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-colic" type="checkbox" name="colic" value="кишечная-колика">
+                  <label class="uptoayear-colic__label" for="colic">кишечная колика</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-regurgitation" type="checkbox" name="regurgitation" value="срыгивания">
+                  <label class="uptoayear-regurgitation__label" for="regurgitation">срыгивания</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-constipation" type="checkbox" name="constipation" value="запоры">
+                  <label class="uptoayear-constipation__label" for="constipation">запоры</label>
+                </div>
+              </div>
+            </div>
+            <input class="uptoayear-readmore" type="text" name="uptoayear-readmore" placeholder="другое">
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Моторные функции. Часть 1</h1>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="motor-functions-held__label" for="held">Держал голову с</label>
+                  <input class="motor-functions-held" type="number" name="held" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="motor-functions-set__label" for="set">Самостоятельно садился</label>
+                  <input class="motor-functions-set" type="number" name="set" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="motor-functions-turned-over__label" for="turned-over">Самостоятельно переворачивался</label>
+                  <input class="motor-functions-turned-over" type="number" name="turned-over" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="motor-functions-grabbed-toys__label" for="grabbed-toys">Хватал игрушки с</label>
+                  <input class="motor-functions-grabbed-toys" type="number" name="grabbed-toys" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="motor-functions-crowled-since__label" for="crowled-since">Ползал с</label>
+                  <input class="motor-functions-crowled-since" type="number" name="crowled-since" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="walking-since__label" for="walking-since">Самостоятельно ходить начал с</label>
+                  <input class="walking-since" type="number" name="walking-since" placeholder="мес">
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Моторные функции. Часть 2</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation"><strong>Особенности дебюта ходьбы:</strong></p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox debut-falling" type="checkbox" name="debut-falling" value="часто-падал">
+                  <label class="debut-falling__label" for="debut-falling">часто падал</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox debut-afraid-to-walk" type="checkbox" name="debut-afraid-to-walk" value="боялся-самостоятельно-ходить">
+                  <label class="debut-afraid-to-walk__label" for="debut-afraid-to-walk">боялся самостоятельно ходить</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox debut-slanted" type="checkbox" name="debut-slanted" value="косолапил">
+                  <label class="debut-slanted__label" for="debut-slanted">“косолапил”</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox debut-run" type="checkbox" name="debut-run" value="сразу-побежал">
+                  <label class="debut-run__label" for="debut-run">сразу побежал</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox debut-on-your-toes" type="checkbox" name="debut-on-your-toes" value="на-мысочках">
+                  <label class="debut-on-your-toes__label" for="debut-on-your-toes">на “мысочках”</label>
+                </div>
+              </div>
+            </div>
+            <textarea class="debut-readmore" name="debut-readmore" placeholder="рассказать подробнее"></textarea>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Речевое развитие</h1>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="speech-lepetus__label" for="speech-lepetus">Лепет с</label>
+                  <input class="speech-lepetus" type="number" name="speech-lepetus" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="speech-words-from__label" for="speech-words-from">Слова с</label>
+                  <input class="speech-words-from" type="number" name="speech-words-from" placeholder="мес">
+                </div>
+                <div class="quiz-grid__elem quiz-grid__elem--num">
+                  <label class="speech-phrases__label" for="speech-phrases">Фразы с</label>
+                  <input class="speech-phrases" type="number" name="speech-phrases" placeholder="года">
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Ранний период, до 1 года. Часть 1</h1>
+            <div class="row">
+              <div class="quiz-grid quiz-grid--withoutannotation">
+                <div class="quiz-grid__elem">
+                  <input class="up-to-one-sars-ari" type="checkbox" name="up-to-one-sars-ari" value="ОРЗ-ОРВИ">
+                  <label class="up-to-one-sars-ari__label" for="up-to-one-sars-ari">ОРЗ / ОРВИ</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox up-to-one-otitis" type="checkbox" name="up-to-one-otitis" value="отит">
+                  <label class="up-to-one-otitis__label" for="up-to-one-otitis">отит</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox up-to-one-musculoskeletal-disorders" type="checkbox" name="up-to-one-musculoskeletal-disorders" value="нарушения- опорно-двигательного-аппарата">
+                  <label class="up-to-one-musculoskeletal-disorders__label" for="up-to-one-musculoskeletal-disorders">нарушения опорно-двигательного аппарата</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox up-to-one-chronic-diseases" type="checkbox" name="up-to-one-chronic-diseases" value="хронические-заболевания">
+                  <label class="up-to-one-chronic-diseases__label" for="up-to-one-chronic-diseases">хронические заболевания</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox up-to-one-head-injury" type="checkbox" name="up-to-one-head-injury" value="травмы-головы">
+                  <label class="up-to-one-head-injury__label" for="up-to-one-head-injury">травмы головы</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox up-to-one-general-anesthesia" type="checkbox" name="up-to-one-general-anesthesia" value="операции-под-общим-наркозом">
+                  <label class="up-to-one-general-anesthesia__label" for="up-to-one-general-anesthesia">операции под общим наркозом</label>
+                </div>
+              </div>
+            </div>
+            <textarea class="up-to-one-readmore" name="up-to-one-readmore" placeholder="рассказать подробнее, уточнить периодичность"></textarea>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Ранний период, до 1 года. Часть 2</h1>
+            <div class="row">
+              <label class="up-to-one-drugs__label" for="up-to-one-drugs">Какие лекарственные препараты ребенок принимал до года:</label>
+              <textarea class="up-to-one-drugs" name="up-to-one-drugs" placeholder="расскажите об этом" rows="3"></textarea>
+              <label class="up-to-one-leading-hand__label" for="up-to-one-leading-hand">Какой рукой предпочтительно манипулировал до года:</label>
+              <textarea class="up-to-one-leading-hand" name="up-to-one-leading-hand" placeholder="расскажите об этом" rows="3"></textarea>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>От года по настоящее время. Часть 1</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation"><strong>Имели место:</strong></p>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-logoneurosis" type="checkbox" name="to-date-logoneurosis" value="логоневроз">
+                  <label class="to-date-logoneurosis__label" for="to-date-logoneurosis">логоневроз</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-encopresis" type="checkbox" name="to-date-encopresis" value="энкопрез">
+                  <label class="to-date-encopresis__label" for="to-date-encopresis">энкопрез</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-vegetative-disorders" type="checkbox" name="to-date-vegetative-disorders" value="вегетативные-расстройства">
+                  <label class="to-date-vegetative-disorders__label" for="to-date-vegetative-disorders">вегетативные расстройства</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-enuresis" type="checkbox" name="to-date-enuresis" value="энурез">
+                  <label class="to-date-enuresis__label" for="to-date-enuresis">энурез</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-fears" type="checkbox" name="to-date-fears" value="страхи">
+                  <label class="to-date-fears__label" for="to-date-fears">страхи</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-fainting" type="checkbox" name="to-date-fainting" value="обмороки">
+                  <label class="to-date-fainting__label" for="to-date-fainting">обмороки</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox to-date-tics" type="checkbox" name="to-date-tics" value="тики">
+                  <label class="to-date-tics__label" for="to-date-tics">тики</label>
+                </div>
+              </div>
+            </div>
+            <textarea class="to-date-readmore" name="to-date-readmore" placeholder="рассказать подробнее"></textarea>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>От года по настоящее время. Часть 2</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation"><strong>Наблюдался / наблюдается ли ребенок специалистом?</strong></p>
+                <div class="quiz-grid__elem">
+                  <input class="supervision-speech-therapist" type="checkbox" name="supervision-speech-therapist" value="логопед">
+                  <label class="supervision-speech-therapist__label" for="supervision-speech-therapist">логопед</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox supervision-neurologist" type="checkbox" name="supervision-neurologist" value="невролог">
+                  <label class="supervision-neurologist__label" for="supervision-neurologist">невролог</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox supervision-psychiatrist" type="checkbox" name="supervision-psychiatrist" value="психиатр">
+                  <label class="supervision-psychiatrist__label" for="supervision-psychiatrist">психиатр</label>
+                </div>
+              </div>
+            </div>
+            <textarea class="supervision-readmore" name="supervision-readmore" placeholder="кратко опишите причину обращения к специалисту"></textarea>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation"><strong>Какой рукой предпочтительно манипулирует в настоящее время?</strong></p>
+                <div class="quiz-grid__elem">
+                  <label class="lead-hand-now-left__label" for="lead-hand-now">левой</label>
+                  <input class="lead-hand-now" type="radio" name="lead-hand-now" value="левой">
+                </div>
+                <div class="quiz-grid__elem">
+                  <label class="lead-hand-now-right__label" for="lead-hand-now">правой</label>
+                  <input class="lead-hand-now-" type="radio" name="lead-hand-now" value="правой">
+                </div>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>От года по настоящее время. Часть 3</h1>
+            <div class="row">
+              <div class="quiz-grid">
+                <p class="quiz-grid__annotation"><strong>Имело ли место переучивание на другую руку?</strong></p>
+                <div class="quiz-grid__elem">
+                  <input class="lead-hand-now-left" type="radio" name="lead-hand-retraining" value="Да">
+                  <label class="lead-hand-retraining__label" for="lead-hand-retraining">да</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="lead-hand-retraining" type="radio" name="lead-hand-retraining" value="Нет">
+                  <label class="lead-hand-retraining__label" for="lead-hand-retraining">нет</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label class="sleeping-habits__label" for="sleeping-habits">Особенности сна, засыпания:</label>
+                <textarea class="sleeping-habits" name="sleeping-habits" placeholder="расскажите об этом" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="ending-of-breastfeeding__label" for="ending-of-breastfeeding">Грудное вскармливание завершили в возрасте</label>
+                <textarea class="ending-of-breastfeeding" name="ending-of-breastfeeding" placeholder="расскажите об этом" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>От года по настоящее время. Часть 4</h1>
+            <div class="row">
+              <div>
+                <label class="become-dry__label" for="become-dry">Самостоятельно садился на горшок с возраста</label>
+                <textarea class="become-dry" name="become-dry" placeholder="расскажите об этом" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="teachers-complaints__label" for="teachers-complaints">Жалобы от учителя / воспитателя / педагога кружков</label>
+                <textarea class="teachers-complaints" name="teachers-complaints" placeholder="расскажите об этом" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="relationships-with-others__label" for="relationships-with-others">Взаимоотношения с окружающими</label>
+                <textarea class="relationships-with-others" name="relationships-with-others" placeholder="расскажите об этом" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>Есть ли что-то, что вам хотелось бы добавить?</h1>
+            <div class="row">
+              <textarea class="anything-else" name="anything-else" placeholder="Расскажите, что считаете нужным" rows="5"></textarea>
+            </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next">
+                <input class="submit" id="submit" type="submit" value="Отправить">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <script src="js/vendor.js"></script>
+      <script src="js/main.js"></script>
+    </div>
+  </body>
+</html>
