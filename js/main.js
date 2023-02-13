@@ -619,7 +619,7 @@ function setData() {
 }
 function getData() {
   var data = JSON.parse(localStorage.getItem('data'));
-  agreementCheckbox.checked = data.agreementCheckboxField;
+  agreementCheckbox.value = data.agreementCheckboxField;
   childsCode.value = data.childsCodeField;
   familyComposition.value = data.familyCompositionField;
   complaints.value = data.complaintsField;
