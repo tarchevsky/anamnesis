@@ -184,9 +184,9 @@ $mail->Body    = '
     <strong>Течение беременности II. Психотравмирующие ситуации</strong>: ' . $partTwoPsychotraumaticSituations . ' <br>
     <strong>Течение беременности II. Психологическое состояние на момент беременности</strong>: ' . $partTwoIrritability . ' ' . $partTwoTearfulness . ' ' . $partTwoTired . ' ' . $partTwoAggression . ' Другое: ' . $partTwoOther . ' <br>
     <strong>Течение беременности II. Ожидаемый пол ребёнка</strong>: ' . $partTwoSexBoy . ' ' . $partTwoSexGirl . ' <br>
-    <strong>Родовая деятельность. Роды наступили на сроке, возраст матери</strong>: ' . $timingAge . ' <br>
-    <strong>Родовая деятельность. Родовая деятельность. Часть 1:</strong>: ' . $birthIndependent . ' ' . $birthRetrieved . ' ' . $birthCaesar . ' ' . $birth . ' ' . $birthReason . '<br>
-    <strong>Родовая деятельность. Родовая деятельность. Часть 2</strong>: ' . $birthAttendanceStimulation . ' ' . $birthAttendanceMechanically . ' ' . $birthAttendancePliers . ' Другое: ' . $birthAttendanceReadmore . ' ' . $anesthesiaLocalGeneral . ' ' . $anesthesiaGeneralGeneral . ' Подробнее: ' . $anesthesiaReadmore . ' <br>
+    <strong>Родовая деятельность. Роды наступили на сроке:</strong> ' . $timingAge . ' <br>
+    <strong>Родовая деятельность. Роды:</strong> ' . $birthIndependent . ' ' . $birthRetrieved . ' ' . $birthCaesar . ' ' . $birth . ' ' . $birthReason . '<br>
+    <strong>Родовая деятельность. Родовая деятельность. Часть 2:</strong> ' . $birthAttendanceStimulation . ' ' . $birthAttendanceMechanically . ' ' . $birthAttendancePliers . ' Другое: ' . $birthAttendanceReadmore . ' ' . $anesthesiaLocalGeneral . ' ' . $anesthesiaGeneralGeneral . ' Подробнее: ' . $anesthesiaReadmore . ' <br>
     <strong>При рождении. Ребёнок закричал</strong>: ' . $screamedAtOnce . ' ' . $screamedAfterSuction . ' ' . $screamedPatting . ' ' . $screamedResuscitation . ' Подробнее: ' . $screamedReadmore . '<br>
     <strong>При рождении. Подлежание</strong>: ' . $breech . ' <br>
     <strong>При рождении. Рост</strong>: ' . $growth . ' <br>
