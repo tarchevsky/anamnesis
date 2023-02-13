@@ -474,7 +474,7 @@ var data = {
 };
 function setData() {
   localStorage.setItem('data', JSON.stringify(data));
-  data.agreementCheckboxField = agreementCheckbox.checked;
+  data.agreementCheckboxField = agreementCheckbox.value;
   data.childsCodeField = childsCode.value;
   data.familyCompositionField = familyComposition.value;
   data.complaintsField = complaints.value;
