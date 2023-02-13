@@ -57,7 +57,9 @@ $growth = $_POST['growth']; // Рост
 $weight = $_POST['weight']; // Вес
 $apgar = $_POST['apgar']; // Оценка по шкале Апгар
 $feeding = $_POST['feeding']; // Первое кормление наступило на
-$how = $_POST['how']; // Грудь взял
+$howActively = $_POST['how-actively']; // Грудь взял активно
+$howSluggishly- = $_POST['how-sluggishly']; // Грудь взял вяло
+$howRefused = $_POST['how-refused']; // Грудь взял отказался
 $waters = $_POST['waters']; // Зелёные околоплодные воды
 $prosecution = $_POST['prosecution']; // обвитие пуповины вокруг шеи или туловища
 $hypoxia = $_POST['hypoxia']; // гипоксия
@@ -84,6 +86,7 @@ $gi = $_POST['gi']; // Развитие до года. Наблюдалось: �
 $colic = $_POST['colic']; // Развитие до года. Наблюдалось: кишечная колика
 $regurgitation = $_POST['regurgitation']; // Развитие до года. Наблюдалось: срыгивания
 $constipation = $_POST['constipation']; // Развитие до года. Наблюдалось: запоры
+$uptoayearNothing= $_POST['uptoayear-nothing']; // Развитие до года. Наблюдалось: ничего из перечисленного
 $uptoayearReadmore = $_POST['uptoayear-readmore']; // Развитие до года. Наблюдалось: другое
 $held = $_POST['held']; // Моторные функции: Держал голову с
 $set = $_POST['set']; // Моторные функции: Самостоятельно садился
@@ -117,6 +120,7 @@ $toDateEnuresis = $_POST['to-date-enuresis']; // РОт года по насто
 $toDateFears = $_POST['to-date-fears']; // От года по настоящее время. Имели место: страхи
 $toDateFainting = $_POST['to-date-fainting']; // От года по настоящее время. Имели место: обмороки
 $toDateTics = $_POST['to-date-tics']; // От года по настоящее время. Имели место: тики
+$toDateNothing = $_POST['to-date-nothing']; // От года по настоящее время. Имели место: ничего из перечисленного
 $toDateReadmore = $_POST['to-date-readmore']; // От года по настоящее время. Имели место: рассказать подробнее
 $toDateLogoneurosis = $_POST['to-date-logoneurosis']; //  От года по настоящее время. Часть 1. Имели место: логоневроз
 $toDateDncopresis = $_POST['to-date-encopresis']; //  От года по настоящее время. Часть 1. Имели место: энкопрез
@@ -151,7 +155,7 @@ $mail->Username = 'marybelova-psy@yandex.ru';                 // Наш логи
 $mail->Password = 'pklliiewyjlwzrwt';                           // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
-
+ 
 $mail->setFrom('marybelova-psy@yandex.ru', 'Квиз - Анамнез');   // От кого письмо
 $mail->addAddress('marybelova-psy@yandex.ru');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
@@ -190,10 +194,10 @@ $mail->Body    = '
     <strong>При рождении. Вес</strong>: ' . $weight . ' <br>
     <strong>При рождении. Оценка по шкале Апгар</strong>: ' . $apgar . ' <br>
     <strong>При рождении. Первое кормление наступило на</strong>: ' . $feeding . ' сутки <br>
-    <strong>При рождении. Грудь взял</strong>: ' . $how . ' <br>
+    <strong>При рождении. Грудь взял</strong>: ' . $howActively . ' ' . $howSluggishly . ' ' . $howRefused . ' <br>
     <strong>При рождении. Имело место</strong>: ' . $waters . ' ' . $prosecution . ' ' . $hypoxia . ' ' . $fetus . ' ' . $umbilicalCord . ' ' . $infection . ' ' . $delay . ' ' . $asphyxiation . ' ' . $nothing . ' Подробнее: ' . $birthReadmore . ' <br>
     <strong>При рождении. Заключение после стационара</strong>: ' . $conclusion . ' <br>
-    <strong>Развитие до года. Наблюдалось</strong>: ' . $restlessness . ' ' . $triangle . ' ' . $handTremor . ' ' . $blushing . ' ' . $hypertonicicty . ' ' . $violation . ' ' . $chinTremor . ' ' . $shudders . ' ' . $hypotonus . ' ' . $pulling . ' ' . $screaming . ' ' . $gi . ' ' . $colic . ' ' . $regurgitation . ' ' . $constipation . ' Другое: ' . $uptoayearReadmore . ' <br>
+    <strong>Развитие до года. Наблюдалось</strong>: ' . $restlessness . ' ' . $triangle . ' ' . $handTremor . ' ' . $blushing . ' ' . $hypertonicicty . ' ' . $violation . ' ' . $chinTremor . ' ' . $shudders . ' ' . $hypotonus . ' ' . $pulling . ' ' . $screaming . ' ' . $gi . ' ' . $colic . ' ' . $regurgitation . ' ' . $constipation . ' ' . $uptoayearNothing . ' Другое: ' . $uptoayearReadmore . ' <br>
     <strong>Моторные функции: Держал голову с</strong>: ' . $held . ' <br>
     <strong>Моторные функции: Самостоятельно садился</strong>: ' . $set . ' <br>
     <strong>Моторные функции: Самостоятельно переворачивался</strong>: ' . $turnedOver . ' <br>
@@ -208,7 +212,7 @@ $mail->Body    = '
     <strong>Ранний период. До 1 года</strong>: ' . $upToOneSarsAri . ' ' . $upToOneOtitis . ' ' . $upToOneMusculoskeletalDisorders . ' ' . $upToOneChronicDiseases . ' ' . $upToOneHeadInjury . ' ' . $upToOneGeneralAnesthesia . ' Подробнее, периодичность: ' . $upToOneDrugsReadmore . ' <br>
     <strong>Ранний период. Какие лекарственные препараты ребенок принимал до года</strong>: ' . $upToOneDrugs . ' <br>
     <strong>Ранний период. Какой рукой предпочтительно манипулировал до года</strong>: ' . $upToOneLeadingHand . ' <br>
-    <strong>От года по настоящее время. Имели место</strong>: ' . $toDateLogoneurosis . ' ' . $toDateEncopresis . ' ' . $toDateVegerativeDisorders . ' ' . $toDateEnuresis . ' ' . $toDateFears . ' ' . $toDateFainting . ' ' . $toDateTics . ' Подробнее: ' . $toDateReadmore . ' <br>
+    <strong>От года по настоящее время. Имели место</strong>: ' . $toDateLogoneurosis . ' ' . $toDateEncopresis . ' ' . $toDateVegerativeDisorders . ' ' . $toDateEnuresis . ' ' . $toDateFears . ' ' . $toDateFainting . ' ' . $toDateTics . ' ' . $toDateNothing . ' Подробнее: ' . $toDateReadmore . ' <br>
     <strong>От года по настоящее время. Часть 1. Имели место</strong>: ' . $toDateLogoneurosis . ' ' . $toDateDncopresis . ' ' . $toDateVegetativeDisorders . ' ' . $toDateDnuresis . ' ' . $toDateFears . ' ' . $toDateFainting . ' Подробнее: ' . $toDateReadmore . ' <br>
     <strong>От года по настоящее время. Наблюдается ли ребенок специалистом?</strong>: ' . $supervisionSpeechTherapist . ' ' . $supervisionNeurologist . ' ' . $supervisionPsychiatrist . ' Причина обращения к специалисту: ' . $supervisionReadmore . ' <br>
     <strong>От года по настоящее время. Какой рукой предпочтительно манипулирует в настоящее время?</strong>: ' . $leadHandNow . ' <br>

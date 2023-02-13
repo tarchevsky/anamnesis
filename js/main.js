@@ -261,7 +261,9 @@ var input = document.querySelectorAll('input'),
   weight = document.querySelector('.weight'),
   apgar = document.querySelector('.apgar'),
   feeding = document.querySelector('.feeding'),
-  how = document.querySelector('.took-how'),
+  howActively = document.querySelector('.took-how-actively'),
+  howSluggishly = document.querySelector('.took-how-sluggishly'),
+  howRefused = document.querySelector('.took-how-refused'),
   waters = document.querySelector('.birth-two-waters'),
   prosecution = document.querySelector('.birth-two-prosecution'),
   hypoxia = document.querySelector('.birth-two-hypoxia'),
@@ -288,6 +290,7 @@ var input = document.querySelectorAll('input'),
   colic = document.querySelector('.uptoayear-colic'),
   regurgitation = document.querySelector('.uptoayear-regurgitation'),
   constipation = document.querySelector('.uptoayear-constipation'),
+  uptoayearNothing = document.querySelector('.uptoayear-nothing'),
   uptoayearReadmore = document.querySelector('.uptoayear-readmore'),
   held = document.querySelector('.motor-functions-held'),
   set = document.querySelector('.motor-functions-set'),
@@ -320,6 +323,7 @@ var input = document.querySelectorAll('input'),
   toDateFears = document.querySelector('.to-date-fears'),
   toDateFainting = document.querySelector('.to-date-fainting'),
   toDateTics = document.querySelector('.to-date-tics'),
+  toDateNothing = document.querySelector('.to-date-nothing'),
   toDateReadmore = document.querySelector('.to-date-readmore'),
   supervisionSpeechTherapist = document.querySelector('.supervision-speech-therapist'),
   supervisionNeurologist = document.querySelector('.supervision-neurologist'),
@@ -391,7 +395,9 @@ var data = {
   weightField: '',
   apgarField: '',
   feedingField: '',
-  howField: '',
+  howActivelyField: '',
+  howSluggishlyField: '',
+  howRefusedField: '',
   watersField: '',
   prosecutionField: '',
   hypoxiaField: '',
@@ -418,6 +424,7 @@ var data = {
   colicField: '',
   regurgitationField: '',
   constipationField: '',
+  uptoayearNothingField: '',
   uptoayearReadmoreField: '',
   heldField: '',
   setField: '',
@@ -450,6 +457,7 @@ var data = {
   toDateFearsField: '',
   toDateFaintingField: '',
   toDateTicsField: '',
+  toDateNothingField: '',
   toDateReadmoreField: '',
   supervisionSpeechTherapistField: '',
   supervisionNeurologistField: '',
@@ -523,7 +531,9 @@ function setData() {
   data.weightField = weight.value;
   data.apgarField = apgar.value;
   data.feedingField = feeding.value;
-  data.howField = how.checked;
+  data.howActivelyField = howActively.checked;
+  data.howSluggishlyField = howSluggishly.checked;
+  data.howRefusedField = howRefused.checked;
   data.watersField = waters.checked;
   data.prosecutionField = prosecution.checked;
   data.hypoxiaField = hypoxia.checked;
@@ -550,6 +560,7 @@ function setData() {
   data.colicField = colic.checked;
   data.regurgitationField = regurgitation.checked;
   data.constipationField = constipation.checked;
+  data.uptoayearNothingField = uptoayearNothing.checked;
   data.uptoayearReadmoreField = uptoayearReadmore.value;
   data.heldField = held.value;
   data.setField = set.value;
@@ -574,6 +585,7 @@ function setData() {
   data.toDateFearsField = toDateFears.checked;
   data.toDateFaintingField = toDateFainting.checked;
   data.toDateTicsField = toDateTics.checked;
+  data.toDateNothingField = toDateNothing.checked;
   data.toDateReadmoreField = toDateReadmore.value;
   data.upToOneSarsAriField = upToOneSarsAri.checked;
   data.upToOneOtitisField = upToOneOtitis.checked;
@@ -590,6 +602,7 @@ function setData() {
   data.toDateFearsField = toDateFears.checked;
   data.toDateFaintingField = toDateFainting.checked;
   data.toDateTicsField = toDateTics.checked;
+  data.toDateNothingField = toDateNothing.checked;
   data.toDateReadmoreField = toDateReadmore.value;
   data.supervisionSpeechTherapistField = supervisionSpeechTherapist.checked;
   data.supervisionNeurologistField = supervisionNeurologist.checked;
@@ -663,7 +676,9 @@ function getData() {
   weight.value = data.weightField;
   apgar.value = data.apgarField;
   feeding.value = data.feedingField;
-  how.checked = data.howField;
+  howActively.checked = data.howActivelyField;
+  howSluggishly.checked = data.howSluggishlyField;
+  howRefused.checked = data.howRefusedField;
   waters.checked = data.watersField;
   prosecution.checked = data.prosecutionField;
   hypoxia.checked = data.hypoxiaField;
@@ -690,6 +705,7 @@ function getData() {
   colic.checked = data.colicField;
   regurgitation.checked = data.regurgitationField;
   constipation.checked = data.constipationField;
+  uptoayearNothing.checked = data.uptoayearNothingField;
   uptoayearReadmore.value = data.uptoayearReadmoreField;
   held.value = data.heldField;
   set.value = data.setField;
@@ -712,6 +728,7 @@ function getData() {
   toDateFears.checked = data.toDateFearsField;
   toDateFainting.checked = data.toDateFaintingField;
   toDateTics.checked = data.toDateTicsField;
+  toDateNothing.checked = data.toDateNothingField;
   toDateReadmore.checked = data.toDateReadmoreField;
   upToOneSarsAri.checked = data.upToOneSarsAriField;
   upToOneMusculoskeletalDisorders.checked = data.upToOneMusculoskeletalDisordersField;
@@ -727,7 +744,8 @@ function getData() {
   toDateEnuresis.checked = data.toDateEnuresisField;
   toDateFears.checked = data.toDateFearsField;
   toDateFainting.checked = data.toDateFaintingField;
-  toDateTics.checked = data.toDateFaintingTics;
+  toDateTics.checked = data.toDateTicsField;
+  toDateNothing.checked = data.toDateNothingField;
   toDateReadmore.value = data.toDateReadmoreField;
   supervisionSpeechTherapist.checked = data.supervisionSpeechTherapistField;
   supervisionNeurologist.checked = data.supervisionNeurologistField;
@@ -759,6 +777,9 @@ inputCheckbox.forEach(function (item) {
   });
 });
 getData();
+window.addEventListener("resize", function () {
+  document.body.style.height = window.innerHeight + "px";
+});
 
 /***/ }),
 

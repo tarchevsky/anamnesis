@@ -37,7 +37,7 @@
                 <h1 class="quiz-heading">Начало приёма</h1>
                 <p>Здравствуйте, вам предстоит заполнить квиз.</p>
                 <p>Это займет примерно 20-30 минут.</p>
-                <p>Важной может показаться каждая деталь. Но если что-то не удается вспомнить, укажите, пожалуйста это в комментарии или  оставьте поля пустыми.</p>
+                <p>Важной может показаться каждая деталь. Но если что-то не удается вспомнить, укажите, пожалуйста, это в комментарии или  оставьте поля пустыми.</p>
                 <p>Спасибо</p>
               </div>
               <div class="quiz-whoiam">
@@ -50,11 +50,10 @@
             </div>
           </div>
           <div class="quiz__item">
-            <h1>Знакомство. Предисловие</h1>
-            <p>Все ваши ответы выгрузятся в удобный для интерпретации формат, результаты мы обсудим на личной встрече. Информация конфиденциальна.<br>Для вашего чувства безопасности и  лучшего шифрования данных, напишите вместо имени и фамилии пятизначный код, полученный у специалиста.<br>А имена и фамилии сообщите мне отдельно.</p>
+            <h1>Начало</h1>
             <div class="agreement">
               <input class="agreement-input" type="checkbox" name="agreement-input" value="Дано">
-              <div class="agreement__descr">Перед заполнением квиза подтвердите, что согласны с обработкой персональных данных и <a href="./privacy.html">политикой конфиденциальности</a></div>
+              <div class="agreement__descr">Перед заполнением квиза подтвердите, что согласны на обработку персональных данных и <a href="./privacy.html">политикой конфиденциальности</a></div>
             </div>
             <div class="navigation">
               <div class="navigation__prev"><a href="#">Назад</a></div>
@@ -86,9 +85,9 @@
               <label class="complaints__label" for="complaints">Жалобы</label>
               <textarea class="complaints" name="complaints" placeholder="Расскажите подробнее" rows="3"></textarea>
             </div>
+            <p class="quiz-grid__annotation">Социальная среда, в которой находится ребенок</p>
             <div class="row">
               <div class="quiz-grid">
-                <p class="quiz-grid__annotation">Социальная среда, в которой находится ребенок</p>
                 <div class="quiz-grid__elem">
                   <input class="checkbox environment-school" type="checkbox" name="environment-school" value="Школа">
                   <label class="environment-school__label" for="environment-school">Школа</label>
@@ -302,7 +301,7 @@
             <h1>Родовая деятельность. Часть 1</h1>
             <div class="row">
               <label class="timing-age__label" for="timing-age">Роды наступили на сроке</label>
-              <input class="timing-age" type="text" name="timing-age" placeholder="сроки">
+              <input class="timing-age" type="text" name="timing-age" placeholder="срок">
             </div>
             <p class="quiz-grid__annotation">Роды:</p>
             <div class="row">
@@ -461,16 +460,16 @@
             <div class="row">
               <div class="quiz-grid quiz-grid--withoutannotation">
                 <div class="quiz-grid__elem">
-                  <input class="checkbox took-how" type="radio" name="how" value="активно">
-                  <label class="took-how__label" for="how">активно</label>
+                  <input class="checkbox took-how-actively" type="checkbox" name="how-actively" value="активно">
+                  <label class="took-how-actively__label" for="how-actively">активно</label>
                 </div>
                 <div class="quiz-grid__elem">
-                  <input class="checkbox took-how" type="radio" name="how" value="вяло">
-                  <label class="took-how__label" for="how">вяло</label>
+                  <input class="checkbox took-how-sluggishly" type="checkbox" name="how-sluggishly" value="вяло">
+                  <label class="took-how-sluggishly__label" for="how-sluggishly">вяло</label>
                 </div>
                 <div class="quiz-grid__elem">
-                  <input class="checkbox took-how" type="radio" name="how" value="отказался">
-                  <label class="took-how__label" for="how">отказался</label>
+                  <input class="checkbox took-how-refused" type="checkbox" name="how-refused" value="отказался">
+                  <label class="took-how-refused__label" for="how-refused">отказался</label>
                 </div>
               </div>
             </div>
@@ -601,6 +600,10 @@
                 <div class="quiz-grid__elem">
                   <input class="checkbox uptoayear-constipation" type="checkbox" name="constipation" value="запоры">
                   <label class="uptoayear-constipation__label" for="constipation">запоры</label>
+                </div>
+                <div class="quiz-grid__elem">
+                  <input class="checkbox uptoayear-nothing" type="checkbox" name="uptoayear-nothing" value="ничего-из-перечисленного">
+                  <label class="uptoayear-nothing__label" for="uptoayear-nothing">ничего из перечисленного</label>
                 </div>
               </div>
             </div>
@@ -764,6 +767,10 @@
               <label class="up-to-one-drugs__label" for="up-to-one-drugs">Какие лекарственные препараты ребенок принимал до года:</label>
               <textarea class="up-to-one-drugs" name="up-to-one-drugs" placeholder="расскажите об этом" rows="3"></textarea>
             </div>
+            <div class="row">
+              <label class="up-to-one-leading-hand__label" for="up-to-one-leading-hand">Какой рукой предпочтительно манипулировал до года:</label>
+              <textarea class="up-to-one-leading-hand" name="up-to-one-leading-hand" placeholder="расскажите об этом" rows="3"></textarea>
+            </div>
             <div class="navigation">
               <div class="navigation__prev"><a href="#">Назад</a></div>
               <div class="navigation__next"><a href="#">Дальше</a></div>
@@ -800,7 +807,9 @@
                 </div>
                 <div class="quiz-grid__elem">
                   <input class="checkbox to-date-tics" type="checkbox" name="to-date-tics" value="тики">
-                  <label class="to-date-tics__label" for="to-date-tics">тики</label>
+                  <label class="to-date-nothing__label" for="to-date-nothing">ничего из перечисленного</label>
+                  <input class="checkbox to-date-nothing" type="checkbox" name="to-date-nothing" value="ничего-из-перечисленного">
+                  <label class="to-date-nothing__label" for="to-date-nothing">тики</label>
                 </div>
               </div>
             </div>
@@ -831,10 +840,6 @@
             </div>
             <textarea class="supervision-readmore" name="supervision-readmore" placeholder="кратко опишите причину обращения к специалисту"></textarea>
             <div class="row">
-              <label class="up-to-one-leading-hand__label" for="up-to-one-leading-hand">Какой рукой предпочтительно манипулировал до года:</label>
-              <textarea class="up-to-one-leading-hand" name="up-to-one-leading-hand" placeholder="расскажите об этом" rows="3"></textarea>
-            </div>
-            <div class="row">
               <div class="quiz-grid">
                 <p class="quiz-grid__annotation"><strong>Какой рукой предпочтительно манипулирует в настоящее время?</strong></p>
                 <div class="quiz-grid__elem">
@@ -847,13 +852,6 @@
                 </div>
               </div>
             </div>
-            <div class="navigation">
-              <div class="navigation__prev"><a href="#">Назад</a></div>
-              <div class="navigation__next"><a href="#">Дальше</a></div>
-            </div>
-          </div>
-          <div class="quiz__item">
-            <h1>От года по настоящее время. Часть 3</h1>
             <div class="row">
               <div class="quiz-grid">
                 <p class="quiz-grid__annotation"><strong>Имело ли место переучивание на другую руку?</strong></p>
@@ -867,6 +865,13 @@
                 </div>
               </div>
             </div>
+            <div class="navigation">
+              <div class="navigation__prev"><a href="#">Назад</a></div>
+              <div class="navigation__next"><a href="#">Дальше</a></div>
+            </div>
+          </div>
+          <div class="quiz__item">
+            <h1>От года по настоящее время. Часть 3</h1>
             <div class="row">
               <div>
                 <label class="sleeping-habits__label" for="sleeping-habits">Особенности сна, засыпания:</label>
@@ -890,7 +895,7 @@
                 <textarea class="become-dry" name="become-dry" placeholder="расскажите об этом" rows="3"></textarea>
               </div>
               <div>
-                <label class="teachers-complaints__label" for="teachers-complaints">Жалобы от учителя / воспитателя / педагога кружков</label>
+                <label class="teachers-complaints__label" for="teachers-complaints">Наблюдения учителя / воспитателя / педагога кружков</label>
                 <textarea class="teachers-complaints" name="teachers-complaints" placeholder="расскажите об этом" rows="3"></textarea>
               </div>
               <div>
