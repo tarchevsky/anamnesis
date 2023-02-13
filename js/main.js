@@ -104,7 +104,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('form').submit(function (e) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').val('');
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('form').trigger('reset');
     });
-    alert('Квиз пройден');
+    alert('Спасибо! Квиз пройден');
     return false;
   }
 });
