@@ -146,65 +146,10 @@ var quizItem = document.querySelectorAll('.quiz__item'),
   condition = document.querySelectorAll('.input-condition'),
   result = document.querySelectorAll('.input-result'),
   agreementCheckbox = document.querySelector('.agreement > input[type="checkbox"]');
-quizItem.forEach(function (item) {
-  item.classList.remove('hidden');
-});
-next.forEach(function (item, i) {
-  agreementCheckbox.addEventListener('click', function () {
-    if (agreementCheckbox.checked) {
-      item.style.display = 'block';
-      agreementCheckbox.style.borderColor = '';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-  item.addEventListener('click', function () {
-    // quizItem[i].classList.add('hidden');
-    if (i === 1 && !agreementCheckbox.checked) {
-      item.style.display = 'none';
-      agreementCheckbox.style.borderColor = 'red';
-    } else {
-      quizItem[i].classList.add('hidden');
-    }
-  });
-});
-prev.forEach(function (item) {
-  agreementCheckbox.addEventListener('click', function () {
-    if (agreementCheckbox.checked) {
-      item.style.display = 'block';
-      agreementCheckbox.style.borderColor = '';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-  item.addEventListener('click', function () {
-    for (var i = quizItem.length; i >= 0; i--) {
-      if (quizItem[i] && quizItem[i].classList.contains('hidden')) {
-        quizItem[i].classList.remove('hidden');
-        window.scrollBy(0, -100);
-        break;
-      }
-    }
-  });
-});
-condition.forEach(function (item, i) {
-  item.addEventListener('change', function (e) {
-    if (e.target.checked) {
-      result[i].style.marginTop = '10px';
-      result[i].style.padding = '10px 0 10px 0';
-      result[i].style.opacity = '1';
-      result[i].style.zIndex = '1';
-    } else {
-      result[i].style.marginTop = '';
-      result[i].style.padding = '';
-      result[i].style.opacity = '';
-      result[i].style.zIndex = '-1';
-    }
-  });
-});
 var input = document.querySelectorAll('input'),
   inputRadio = document.querySelectorAll('input[type="radio"]'),
   inputCheckbox = document.querySelectorAll('input[type="checkbox"]'),
+  textArea = document.querySelectorAll('textarea'),
   childsCode = document.querySelector('.childs-code'),
   familyComposition = document.querySelector('.family-composition'),
   complaints = document.querySelector('.complaints'),
@@ -474,7 +419,7 @@ var data = {
 };
 function setData() {
   localStorage.setItem('data', JSON.stringify(data));
-  data.agreementCheckboxField = agreementCheckbox.value;
+  data.agreementCheckboxField = agreementCheckbox.checked;
   data.childsCodeField = childsCode.value;
   data.familyCompositionField = familyComposition.value;
   data.complaintsField = complaints.value;
@@ -619,7 +564,7 @@ function setData() {
 }
 function getData() {
   var data = JSON.parse(localStorage.getItem('data'));
-  agreementCheckbox.value = data.agreementCheckboxField;
+  agreementCheckbox.checked = data.agreementCheckboxField;
   childsCode.value = data.childsCodeField;
   familyComposition.value = data.familyCompositionField;
   complaints.value = data.complaintsField;
@@ -760,25 +705,107 @@ function getData() {
   relationshipsWithOthers.value = data.relationshipsWithOthersField;
   anythingElse.value = data.anythingElseField;
 }
-input.forEach(function (item) {
-  item.addEventListener('keydown', function () {
-    // e.preventDefault();
-    setData();
-  });
+quizItem.forEach(function (item) {
+  item.classList.remove('hidden');
 });
-inputRadio.forEach(function (item) {
+next.forEach(function (item, i) {
+  // agreementCheckbox.addEventListener('click', () => {
+  //     if (agreementCheckbox.checked) {
+  //         item.style.display = 'block';
+  //         agreementCheckbox.style.borderColor = '';
+  //     } else {
+  //         item.style.display = 'none';
+  //     }
+  // });
   item.addEventListener('click', function () {
-    setData();
+    quizItem[i].classList.add('hidden');
+    // if (i === 1 && !agreementCheckbox) {
+    //     item.style.display = 'none';
+    //     agreementCheckbox.style.borderColor = 'red';
+    // } else {
+    //     quizItem[i].classList.add('hidden');
+    // }
   });
 });
-inputCheckbox.forEach(function (item) {
+
+prev.forEach(function (item) {
+  // agreementCheckbox.addEventListener('click', () => {
+  //
+  //     if (agreementCheckbox.checked) {
+  //         item.style.display = 'block';
+  //         agreementCheckbox.style.borderColor = '';
+  //     } else {
+  //         item.style.display = 'none';
+  //     }
+  // });
+
   item.addEventListener('click', function () {
-    setData();
+    for (var i = quizItem.length; i >= 0; i--) {
+      if (quizItem[i] && quizItem[i].classList.contains('hidden')) {
+        quizItem[i].classList.remove('hidden');
+        window.scrollBy(0, -100);
+        break;
+      }
+    }
   });
 });
-getData();
-window.addEventListener("resize", function () {
-  document.body.style.height = window.innerHeight + "px";
+condition.forEach(function (item, i) {
+  item.addEventListener('change', function (e) {
+    if (e.target.checked) {
+      result[i].style.marginTop = '10px';
+      result[i].style.padding = '10px 0 10px 0';
+      result[i].style.opacity = '1';
+      result[i].style.zIndex = '1';
+    } else {
+      result[i].style.marginTop = '';
+      result[i].style.padding = '';
+      result[i].style.opacity = '';
+      result[i].style.zIndex = '-1';
+    }
+  });
+});
+
+// input.forEach((item) => {
+//     if (item.value) {
+//         getData();
+//     }
+//
+//     item.addEventListener('keydown', () => {
+//         // e.preventDefault();
+//         setData();
+//     });
+// });
+//
+// inputRadio.forEach((item) => {
+//     if (item.checked) {
+//         getData();
+//     }
+//     item.addEventListener('click', () => {
+//         setData();
+//     });
+// });
+//
+// textArea.forEach((item) => {
+//     if (item.value) {
+//         getData();
+//     }
+//     item.addEventListener('click', () => {
+//         setData();
+//     });
+// });
+//
+// inputCheckbox.forEach((item) => {
+//     if (item.checked) {
+//         getData();
+//     }
+//
+//     item.addEventListener('click', () => {
+//         setData();
+//     });
+// });
+
+window.addEventListener('resize', function () {
+  document.body.style.height = window.innerHeight + 'px';
 });
 
 /***/ }),
