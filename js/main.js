@@ -145,7 +145,7 @@ var quizItem = document.querySelectorAll('.quiz__item'),
   prev = document.querySelectorAll('.navigation__prev a'),
   condition = document.querySelectorAll('.input-condition'),
   result = document.querySelectorAll('.input-result'),
-  agreementCheckbox = document.querySelector('.agreement > input[type="checkbox"]');
+  agreementCheckbox = document.querySelector('.agreement-input');
 var input = document.querySelectorAll('input'),
   inputRadio = document.querySelectorAll('input[type="radio"]'),
   inputCheckbox = document.querySelectorAll('input[type="checkbox"]'),
@@ -709,36 +709,33 @@ quizItem.forEach(function (item) {
   item.classList.remove('hidden');
 });
 next.forEach(function (item, i) {
-  // agreementCheckbox.addEventListener('click', () => {
-  //     if (agreementCheckbox.checked) {
-  //         item.style.display = 'block';
-  //         agreementCheckbox.style.borderColor = '';
-  //     } else {
-  //         item.style.display = 'none';
-  //     }
-  // });
+  agreementCheckbox.addEventListener('click', function () {
+    if (agreementCheckbox.checked) {
+      item.style.display = 'block';
+      agreementCheckbox.style.borderColor = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
   item.addEventListener('click', function () {
-    quizItem[i].classList.add('hidden');
-    // if (i === 1 && !agreementCheckbox) {
-    //     item.style.display = 'none';
-    //     agreementCheckbox.style.borderColor = 'red';
-    // } else {
-    //     quizItem[i].classList.add('hidden');
-    // }
+    // quizItem[i].classList.add('hidden');
+    if (i === 1 && !agreementCheckbox.checked) {
+      item.style.display = 'none';
+      agreementCheckbox.style.borderColor = 'red';
+    } else {
+      quizItem[i].classList.add('hidden');
+    }
   });
 });
-
 prev.forEach(function (item) {
-  // agreementCheckbox.addEventListener('click', () => {
-  //
-  //     if (agreementCheckbox.checked) {
-  //         item.style.display = 'block';
-  //         agreementCheckbox.style.borderColor = '';
-  //     } else {
-  //         item.style.display = 'none';
-  //     }
-  // });
-
+  agreementCheckbox.addEventListener('click', function () {
+    if (agreementCheckbox.checked) {
+      item.style.display = 'block';
+      agreementCheckbox.style.borderColor = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
   item.addEventListener('click', function () {
     for (var i = quizItem.length; i >= 0; i--) {
       if (quizItem[i] && quizItem[i].classList.contains('hidden')) {
